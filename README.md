@@ -38,3 +38,15 @@ points at Nunito. To switch to the real font, drop the Gotham Rounded files
 into `assets/fonts/` and replace the single `Nunito[wght].ttf` entry with the
 Light / Book / Medium / Bold files (weights 300 / 400 / 500 / 700). No code
 changes needed. Tajawal (Arabic) and Poppins (badge) are bundled.
+
+## TestFlight upload
+
+Bump the build number in `pubspec.yaml` (`1.0.0+N`), then:
+
+```bash
+flutter build ipa --release --export-method app-store
+xcodebuild -exportArchive -archivePath build/ios/archive/Runner.xcarchive \
+  -exportOptionsPlist ios/ExportOptions.plist -exportPath build/ios/ipa -allowProvisioningUpdates
+```
+
+Requires Xcode to be signed in to the team's Apple ID (Xcode > Settings > Accounts).

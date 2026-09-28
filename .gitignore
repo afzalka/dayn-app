@@ -29,3 +29,4 @@ android/.gradle/
 android/local.properties
 android/**/GeneratedPluginRegistrant.java
 android/app/.cxx/
+*.apk
